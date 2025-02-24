@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="StylesheetInvestmentGrowthCalculator.css">
+        <script src="Calculator.js"></script>
+        <title>Investment Growth Calculator</title>
+        <link rel="icon" type="image/x-icon" href="https://www.svgrepo.com/show/506416/calculator.svg">
+    </head>
+    <body>
+        <header>
+            <h1>Investment Growth Calculator</h1>
+            <img src="https://www.svgrepo.com/show/506416/calculator.svg" alt="Calculator Icon">
+        </header>
+        <p>
+            This investment calculator website allows users to quickly estimate potential returns by entering basic financial details. It provides straightforward projections to help users understand their investment outcomes. The website is designed to be user-friendly and efficient for quick calculations.
+        </p>
+        <form onsubmit="return getCompoundInterest()"> 
+            <label for="initialInvestment">Initial amount invested:</label><br>
+            <input type="text" id="initialInvestment" name="initialInvestment"><br>
+            <label for="interestRate">Annual interest rate:</label><br>
+            <input type="text" id="interestRate" name="interestRate"><br>
+            <label for="retirementYear">Year of retirement:</label>
+            <select name="retirementYear" id="retirementYear">
+            <script>
+                const currentYear = new Date().getFullYear();
+                for (let year = currentYear; year <= currentYear + 50; year++) 
+                {
+                    document.write(`<option value="${year}">${year}</option>`);
+                }
+            </script>   
+            </select>
+            <br>
+            <input type="submit" />     
+        </form> 
+        <p id="result"></p>
+    </body>
+</html>
